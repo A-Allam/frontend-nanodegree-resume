@@ -38,12 +38,12 @@ function bioDisplay() {
   if(bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
 
-    for(i in bio.skills) {
+    for( var i in bio.skills) {
       $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
     }
   }
 
-  for(i in formattedContactInfo) {
+  for(var i in formattedContactInfo) {
     $("#topContacts").append(formattedContactInfo[i]);
     $("#footerContacts").append(formattedContactInfo[i]);
   }
@@ -91,7 +91,7 @@ var education = {
 
 function displayEducation () {
   if(education.schools.length > 0 || education.onlineCourses.length > 0) {
-    for(i in education.schools) {
+    for(var i in education.schools) {
       $("#education").append(HTMLschoolStart);
 
       var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
@@ -108,7 +108,7 @@ function displayEducation () {
 
     if(education.onlineCourses.length > 0) {
       $("#education").append(HTMLonlineClasses);
-      for(i in education.onlineCourses) {       
+      for(var i in education.onlineCourses) {       
         $("#education").append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
@@ -157,14 +157,14 @@ var work  = {
     },
   ],
   "display" : displayWork
-}
+};
 
 function displayWork() {
   if(work.jobs.length > 0) {
   
     $("#workExperience").append(HTMLworkStart);
 
-    for(i in work.jobs) {
+    for(var i in work.jobs) {
       var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
       var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
       var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
@@ -201,11 +201,11 @@ var projects = {
     },
   ],
   "display": displayProjects
-}
+};
 
 function displayProjects() {
   if(projects.projects.length > 0) {
-    for(i in projects.projects) {
+    for(var i in projects.projects) {
       $("#projects").append(HTMLprojectStart);
 
       var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
@@ -216,7 +216,7 @@ function displayProjects() {
       $(".project-entry:last").append(formattedProjectDates);
       $(".project-entry:last").append(formattedProjectDescription);
 
-      for(img in projects.projects[i].images) {
+      for(var img in projects.projects[i].images) {
         var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
         $(".project-entry:last").append(formattedProjectImage);
       }
