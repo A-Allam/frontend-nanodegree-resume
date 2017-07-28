@@ -121,7 +121,7 @@ function displayEducation() {
   }
 }
 
-education.display()
+education.display();
 
 // work section
 var work = {
